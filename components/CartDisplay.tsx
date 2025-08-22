@@ -4,6 +4,7 @@
 
 import React, { useState } from 'react';
 import { useCart } from './CartContext';
+import Image from 'next/image';
 
 export default function CartDisplay() {
   const { cartItems, cartItemCount, totalPrice, removeFromCart, clearCart } =
@@ -77,10 +78,18 @@ export default function CartDisplay() {
                       className='flex items-center justify-between p-2 bg-gray-50 rounded'
                     >
                       <div className='flex items-center space-x-3'>
-                        <img
+                        <Image
                           src={item.imageUrl}
+                          alt={item.name}
+                        width={200}
+                        height={200}
+                        unoptimized
+                                  sizes="(max-width: 640px) 100vw, 400px"
+                                  placeholder="blur"
+                                    blurDataURL="/placeholder.png" 
                           className='w-10 h-10 object-cover rounded'
                         />
+
                         <div>
                           <p className='text-sm font-medium text-gray-900'>
                             {item.name}

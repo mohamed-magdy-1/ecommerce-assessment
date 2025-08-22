@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useCart } from './CartContext';
+import Image from 'next/image';
 
 export default function MonolithicProductPage({ products }: any) {
   const { addToCart } = useCart();
@@ -24,10 +25,6 @@ const filteredProducts = useMemo(() => {
     });
 }, [products, searchTerm, sortOrder, filterPrice]);
 
-useEffect(() => {
-  console.log("products:", products);
-  console.log("filteredProducts:", filteredProducts);
-}, [filteredProducts, products]);
 
   const containerStyle = {
     padding: '20px',
@@ -86,7 +83,16 @@ useEffect(() => {
             key={product.id}
             style={{ backgroundColor: 'white', padding: '16px' }}
           >
-            <img src={product.imageUrl} className='w-full h-48 object-cover' />
+            <Image
+              src={product.imageUrl}
+              alt={product.name}
+              width={200}
+              height={200}
+              sizes="(max-width: 640px) 100vw, 400px"
+              placeholder="blur"
+              blurDataURL="/placeholder.png"
+              className='w-full h-48 object-cover'
+            />
 
             <h3 style={{ fontSize: '18px', marginTop: '8px' }}>
               {product.name}

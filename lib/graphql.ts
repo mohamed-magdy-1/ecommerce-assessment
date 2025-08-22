@@ -25,7 +25,8 @@ const mockProducts: Product[] = [
     description:
       'A comfortable and stylish classic white cotton t-shirt, perfect for any casual occasion.',
     imageUrl:
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop&crop=center',
+    // use webp
+      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
   {
     id: '2',
@@ -34,7 +35,7 @@ const mockProducts: Product[] = [
     description:
       'Durable premium denim jeans with a modern slim fit, crafted for everyday comfort and style.',
     imageUrl:
-      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=300&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
   {
     id: '3',
@@ -43,7 +44,7 @@ const mockProducts: Product[] = [
     description:
       'Premium genuine leather jacket with vintage styling, perfect for creating a timeless look.',
     imageUrl:
-      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
   {
     id: '4',
@@ -52,7 +53,7 @@ const mockProducts: Product[] = [
     description:
       'Lightweight, breathable running shoes with advanced cushioning technology for maximum comfort.',
     imageUrl:
-      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
   {
     id: '5',
@@ -61,7 +62,7 @@ const mockProducts: Product[] = [
     description:
       'Soft, warm knit sweater made from premium wool blend, ideal for cooler weather.',
     imageUrl:
-      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=300&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
   {
     id: '6',
@@ -70,7 +71,7 @@ const mockProducts: Product[] = [
     description:
       'Stylish designer sunglasses with UV protection and premium polarized lenses.',
     imageUrl:
-      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop&crop=center',
+      'https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&h=300&fit=crop&crop=center&fm=webp',
   },
 ];
 
