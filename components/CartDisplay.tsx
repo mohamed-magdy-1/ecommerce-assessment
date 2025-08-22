@@ -14,7 +14,7 @@ export default function CartDisplay() {
     <div className='relative'>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className='flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200'
+        className='flex items-center space-x-2  bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200'
       >
         <svg
           className='w-5 h-5'
@@ -38,7 +38,7 @@ export default function CartDisplay() {
       </button>
 
       {isOpen && (
-        <div className='absolute right-0 mt-2' style={{ width: '400px' }}>
+        <div className='absolute bg-white shadow-lg border rounded-[5px] right-0 mt-2' style={{ width: '400px' }}>
           <div className='p-4'>
             <div className='flex justify-between items-center mb-4'>
               <h3 className='text-lg font-semibold text-gray-900'>

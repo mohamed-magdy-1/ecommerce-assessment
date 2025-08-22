@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { useCart } from './CartContext';
 
 export default function MonolithicProductPage({ products }: any) {
@@ -10,7 +10,8 @@ export default function MonolithicProductPage({ products }: any) {
   const [filterPrice, setFilterPrice] = useState(1000);
   const [isLoading, setIsLoading] = useState(false);
 
-  const filteredProducts = products
+const filteredProducts = useMemo(() => {
+  return products
     ?.filter(
       (product: any) =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -21,11 +22,23 @@ export default function MonolithicProductPage({ products }: any) {
       if (sortOrder === 'price') return a.price - b.price;
       return 0;
     });
+}, [products, searchTerm, sortOrder, filterPrice]);
+
+useEffect(() => {
+  console.log("products:", products);
+  console.log("filteredProducts:", filteredProducts);
+}, [filteredProducts, products]);
 
   const containerStyle = {
     padding: '20px',
     backgroundColor: '#f5f5f5',
   };
+
+
+// to stop re-creating the function on every render
+  const handleAddToCart = useCallback(() => {
+  addToCart(products);
+}, [addToCart, products]);
 
   return (
     <div style={containerStyle} className='min-h-screen'>
@@ -86,7 +99,7 @@ export default function MonolithicProductPage({ products }: any) {
               </span>
 
               <button
-                onClick={() => addToCart(product)}
+                onClick={handleAddToCart}
                 style={{
                   backgroundColor: '#3b82f6',
                   color: 'white',
@@ -100,6 +113,8 @@ export default function MonolithicProductPage({ products }: any) {
             </div>
           </div>
         ))}
+
+
       </div>
     </div>
   );

@@ -18,12 +18,10 @@ export default function SearchPage() {
     <div className='p-8'>
       <h1 className='text-3xl mb-4'>Search Results</h1>
 
-      <div
-        className='mb-4 p-4 bg-gray-100'
-        dangerouslySetInnerHTML={{
-          __html: `You searched for: <strong>${query}</strong>`,
-        }}
-      />
+      {/* if you want to use dangerouslySetInnerHTML you need to install dompurify npm i dompurify and use dangerouslySetInnerHTML={{ __html: You searched for: <strong>${query}</strong>, }} */}
+      <div className='mb-4 p-4 bg-gray-100'>
+        You searched for: <strong>{query}</strong>
+      </div>
 
       <div className='mt-8'>
         <h2 className='text-xl mb-4'>Leave a Comment</h2>
@@ -41,12 +39,14 @@ export default function SearchPage() {
         </button>
 
         <div className='mt-4'>
-          {comments.map((comment, idx) => (
+   {comments.map((comment, idx) => (
             <div
               key={idx}
               className='p-2 mb-2 bg-white border'
-              dangerouslySetInnerHTML={{ __html: comment }}
-            />
+            >
+              {/* the same are also here you need add dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(comment) }} after install dompurify */}
+              {comment} 
+            </div>
           ))}
         </div>
       </div>

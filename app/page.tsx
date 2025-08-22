@@ -8,21 +8,30 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
-    fetchProducts().then(({ data }) => {
-      setProducts(data.products);
-      setLoading(false);
-    });
+    const loadProducts = async () => {
+      try {
+        setLoading(true);
+        const { data } = await fetchProducts();
+        setProducts(data.products);
+      } catch (err) {
+        setError('Failed to load products');
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadProducts();
   }, []);
 
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const sortedProducts = filteredProducts.sort((a, b) =>
-    a.name.localeCompare(b.name)
-  );
+const sortedProducts = [...filteredProducts].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
 
   return (
     <div className='min-h-screen bg-gradient-to-br from-gray-50 to-gray-100'>
@@ -52,10 +61,19 @@ export default function Home() {
               className='w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
             />
           </div>
-          <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-            {sortedProducts.map((product: Product, index) => (
-              <ProductCard key={index} product={product} />
-            ))}
+          {loading && <p>Loading products...</p>}
+          {error && <p className="text-red-500">{error}</p>}
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {
+              sortedProducts.length === 0 && !loading && !error ? (
+                <p>No products found</p>
+              ) : (
+                sortedProducts.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))
+              )
+            }
           </div>
         </div>
 

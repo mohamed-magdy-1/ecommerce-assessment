@@ -10,19 +10,19 @@ export default function ProductDetailPage() {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const query = `SELECT * FROM products WHERE id = '${productId}'`;
-      console.log('Executing query:', query);
-      setProduct({
-        id: productId,
-        name: `Product ${productId}`,
-        price: 99.99,
-        description: 'Sample product',
-      });
+      const res = await fetch(`/api/products/${productId}`);
+      const data = await res.json();
+      setProduct(data);
     };
 
     fetchProduct();
   }, [productId]);
 
+
+  if (!product) {
+    return <div className='p-8'>Loading...</div>;
+  }
+  
   return (
     <div className='p-8'>
       {product && (
